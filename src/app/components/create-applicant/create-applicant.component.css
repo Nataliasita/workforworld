@@ -1,0 +1,27 @@
+.contenedor_create_applicant{
+    width: 100vw;
+    height: 90vh;
+ 
+    background-color: #427eff;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.form_applicant{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 89vh;
+    width: 50vw;
+    background-color: bisque;
+}
+.contain-form{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 20vh;
+    background-color: blue;
+    align-items: center;
+    justify-content: space-around;
+}

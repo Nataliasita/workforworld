@@ -1,0 +1,81 @@
+<p>create-applicant works!</p>
+<section class="contenedor_create_applicant">
+
+      <form action="" class="form_applicant" autocomplete="off" [formGroup]=" createApplicant" (ngSubmit)="  addApplicant()">
+        
+        <div class="contain-form">
+            
+                <div class="contain-formint">
+
+                    <label for="name">Nombres</label>
+                        <input type="text"  id="name" formControlName="name">
+                    <label for="lastname">Apellidos</label>
+                    <input type="text" id="lastname" formControlName="lastname">
+
+                </div>
+
+        </div>
+                <div>
+                    <span>Tipo de identificación</span>
+
+                        <select name="" id="" formControlName="typeIdent">
+                            <option value="CC">Cedula de Ciudadania</option>
+                            <option value="CE">Cedula Extranjeria</option>
+                            <option value="Passport">Pasaporte</option>
+                        </select>
+
+                    <label for="id_applicant">Número de identificación</label>
+                    <input type="number" id="id_applicant" formControlName="numberIdent">
+                     </div>
+
+  
+        
+        <div>
+            <label for="email_applicant">Correo Electronico</label>
+            <input type="email" id="email_applicant" formControlName="email">
+
+            <label for="number-applicant">Telefono de contacto</label>
+            <input type="number" id="number-applicant" formControlName="phoneContact">
+
+            <label for="date_applicant">Fecha de Nacimiento</label>
+            <input type="date" id="date_applicant">
+
+            <label for="country_applicant">Pais de residencia</label>
+            <input type="text" id="country_applicant">
+
+            <label for="country_applicant">Ciudad de residencia</label>
+            <input type="text" id="country_applicant">
+        </div>
+
+        <div>
+            <span>Cual es tu ultimo nivel de Estudios Terminado</span>
+
+            <select name="" id="">
+                <option selected>Selecciona una opcion</option>
+                <option value="">Basica secundaria</option>
+                <option value="">Tecnico o Tecnologo</option>
+                <option value="">Pregrado Universitario</option>
+                <option value="">Posgrado - Especializacion</option>
+                <option value="">Posgrado - Maestria</option>
+                <option value="">Posgrado - Doctorado</option>
+            </select>
+        </div>
+
+        <div>
+            
+            <span>Tienes Experiencia Laboral</span> 
+                
+                <input type="radio" id="yes"><label for="yes">Si</label>
+                <input type="radio" id="not"><label for="Not">No</label>
+        </div>
+
+        <div>     
+                <input type="checkbox" id="term"> 
+                <label for="term">He leído y autorizo los Términos y condiciones de este portal.</label>
+        </div>     
+
+                <button>Crear cuenta</button>
+        </form>
+            <span *ngIf="submitted && createApplicant.invalid">Todos los campos son obligatorios</span>
+                
+</section>
