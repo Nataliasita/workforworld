@@ -1,0 +1,57 @@
+.container_work{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 0;
+    color: #000000;
+    background: linear-gradient(#1a57ff, #9198e5);
+    /* background: linear-gradient(0.25turn , #494949, #4E42D4); */
+    /* background: radial-gradient(#e66465, #9198e5); */
+    /* background: radial-gradient(ellipse at top, #00459e, transparent),
+            radial-gradient(ellipse at bottom, #00459e, transparent); */
+    /* background: #fffffb; */
+}
+.init{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    clip-path: polygon(0 65%, 0% 100%, 25% 100%, 13% 7%, 75% 25%, 100% 100%, 39% 69%, 25% 100%, 64% 55%, 100% 0);
+    background: linear-gradient(336deg, #9a00d6, rgba(0,0,255,0) 70.71%),
+                linear-gradient(217deg, rgb(0, 183, 255), rgba(255,0,0,0) 70.71%),
+                linear-gradient(336deg, rgba(0, 53, 133, 0.8), rgba(0,0,255,0) 70.71%);
+    z-index: 1;
+    justify-content: center;
+    justify-items: center;
+}
+.welcome{
+    z-index: 50;
+    width: 1000vw;
+    height: 100vh;
+    position: absolute;
+    background-color: #ffffff2a;
+    justify-content: space-around;
+    display: flex;
+    backdrop-filter: blur(5px);
+    align-items: center;
+    flex-direction: column;
+    color: #ffffff;
+    border-radius: 20px;
+   
+}
+button{
+    width: 10vw;
+    height: 15vh;
+    border: none;
+    width: 18vw;
+    border-radius: 10px;
+    background: #2d2588;
+    color: #ffffff;
+    font-size: 1.5em;
+}
+button:hover{
+    cursor: pointer;
+    background: linear-gradient(0.25turn, #9a00d6,  #fe3a3a);
+}

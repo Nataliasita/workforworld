@@ -46,3 +46,20 @@
 input{
     outline: none;
 }
+select{
+    outline: none;
+}
+.container-skill{
+    width: 50vw;
+    height: 20vh;
+    background-color: rgb(255, 102, 0);
+    flex-direction: column;
+    display: flex;
+}
+.ng-valid[required], .ng-valid.required  {
+    border-bottom: 5px solid #00b609; /* green */
+  }
+  
+input.ng-invalid.ng-touched {
+    border:  5px solid#FA787E;
+}
