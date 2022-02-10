@@ -32,10 +32,16 @@ export class CreateApplicantComponent implements OnInit {
                 'Trabajo bajo presion','Ventas'
               ]
 
+  optionThought=['Administración de la información','Algoritmos y programación','Aspectos sociales y profesionales','Ciencias de la computación','Circuitos','Computación centrada en la red',
+                  'Computación gráfica',' Electrónica',' Ingeniería de software','Interacción humana','Sistemas digitales',' Machine Learning','Sistemas operativos','Telecomunicaciones',
+                  'javaScript', 'Html', 'Css', 'Angular'
+                ]
+
 
   createApplicant:FormGroup;
   submitted=false;
   selected:string='';
+  selectedKnowledge:string='';
 
   constructor(private fb: FormBuilder,
               private _applicantService: ApplicantService) { 
@@ -46,10 +52,28 @@ export class CreateApplicantComponent implements OnInit {
       numberIdent:['', Validators.required],
       email:['', Validators.required],
       phoneContact:['', Validators.required],
+      numBirth:[''],
+      monthBirth:[''],
+      yearBirth:[''],
       country:['', Validators.required],
       city:['', Validators.required],
+      aboutMe:[''],
+      travel:[''],
+      knowledge:[''],
       levelStudy:['', Validators.required],
       skill:[''],
+      titleStudy:[''],
+      study:[''],
+      yearJob:[''],
+      nameJob:[''],
+      nameCompany:[''],
+      sectorCompany:[''],
+      companyMonth:[''],
+      companyYear:[''],
+      companyActual:[''],
+      finalMonth:[''],
+      finalYear:[''],
+      attainment:[''],
     })
   }
 
@@ -71,10 +95,28 @@ export class CreateApplicantComponent implements OnInit {
       numberIdent:this.createApplicant.value.numberIdent,
       email:this.createApplicant.value.email,
       phoneContact:this.createApplicant.value.phoneContact,
+      numBirth:this.createApplicant.value.numBirth,
+      monthBirth:this.createApplicant.value.monthBirth,
+      yearBirth:this.createApplicant.value.yearBirth,
       country:this.createApplicant.value.country,
       city:this.createApplicant.value.city,
+      aboutMe:this.createApplicant.value.aboutMe,
+      travel:this.createApplicant.value.travel,
+      knowledge:this.createApplicant.value.knowledge,
       levelStudy:this.createApplicant.value.levelStudy,
       skill:this.createApplicant.value.skill,
+      titleStudy:this.createApplicant.value.titleStudy,
+      study:this.createApplicant.value.study,
+      yearJob:this.createApplicant.value.yearJob,
+      nameJob:this.createApplicant.value.nameJob,
+      nameCompany:this.createApplicant.value.nameCompany,
+      sectorCompany:this.createApplicant.value.sectorCompany,
+      companyMonth:this.createApplicant.value.companyMonth,
+      companyYear:this.createApplicant.value.companyYear,
+      companyActual:this.createApplicant.value.companyActual,
+      finalMonth:this.createApplicant.value.finalMonth,
+      finalYear:this.createApplicant.value.finalYear,
+      attainment:this.createApplicant.value.attainment,
       dateCreation: new Date(),
       dateUpgrade: new Date(),
     }

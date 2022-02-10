@@ -19,7 +19,7 @@
     height: 100vh;
     display: flex;
     clip-path: polygon(0 65%, 0% 100%, 25% 100%, 13% 7%, 75% 25%, 100% 100%, 39% 69%, 25% 100%, 64% 55%, 100% 0);
-    background: linear-gradient(336deg, #9a00d6, rgba(0,0,255,0) 70.71%),
+    background: linear-gradient(336deg, #ff788e, rgba(0,0,255,0) 70.71%),
                 linear-gradient(217deg, rgb(0, 183, 255), rgba(255,0,0,0) 70.71%),
                 linear-gradient(336deg, rgba(0, 53, 133, 0.8), rgba(0,0,255,0) 70.71%);
     z-index: 1;
@@ -47,11 +47,11 @@ button{
     border: none;
     width: 18vw;
     border-radius: 10px;
-    background: #2d2588;
+    background:#2300bd;
     color: #ffffff;
     font-size: 1.5em;
 }
 button:hover{
     cursor: pointer;
-    background: linear-gradient(0.25turn, #9a00d6,  #fe3a3a);
+    background: linear-gradient(0.25turn, #7a00aa,  #fe3a3a);
 }

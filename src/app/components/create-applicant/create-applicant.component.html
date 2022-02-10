@@ -29,7 +29,7 @@
                         </select>
 
                     <label for="id_applicant">Número de identificación</label>
-                    <input type="number" id="id_applicant" formControlName="numberIdent">
+                    <input type="number" id="id_applicant" formControlName="numberIdent" required >
         
         </div>
 
@@ -37,25 +37,25 @@
             
             <div >
                 <label for="email_applicant">Correo Electronico</label>
-                <input type="email" id="email_applicant" formControlName="email">
+                <input type="email" id="email_applicant" formControlName="email" required >
 
                 <label for="number-applicant">Telefono de contacto</label>
-                <input type="number" id="number-applicant" formControlName="phoneContact">
+                <input type="number" id="number-applicant" formControlName="phoneContact" required >
 
                 <span>Fecha de Nacimiento</span>
-                <input type="number" id="date_applicant">
+                <input type="number" id="date_applicant" formControlName="numBirth">
 
-                <select name="" id="">
+                <select name="" id="" formControlName="monthBirth">
                     <option  *ngFor="let na of optionMonth">{{na}}</option>
                 </select>
 
-                <input type="number">
+                <input type="number" placeholder="AAAA" formControlName="yearBirth">
 
                 <label for="country_applicant">Pais de residencia</label>
-                <input type="text" id="country_applicant" formControlName="country">
+                <input type="text" id="country_applicant" formControlName="country" required>
 
                 <label for="country_applicant">Ciudad de residencia</label>
-                <input type="text" id="country_applicant" formControlName="city">
+                <input type="text" id="country_applicant" formControlName="city" required >
             </div>
 
     </section>
@@ -64,24 +64,38 @@
 
             <div>
     
-                <h4>Perfil Profesional</h4>
+                <!-- <h4>Perfil Profesional</h4> -->
     
                 <span>Descripción breve de tu perfil profesional</span>
-                <textarea name="" id="" cols="30" rows="10" placeholder="Ejemplo: Soy un Fotografo profesional apasionado por el paisajismo."></textarea>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Ejemplo: Soy un Fotografo profesional apasionado por el paisajismo." formControlName="aboutMe">
+
+                </textarea>
                 
     
-        
-                <label for="travel">Disponibilidad para viajar</label>
-                <input type="radio" id="travel">
+                <span>Disponibilidad para viajar</span>
+                <select name="" id="" formControlName="travel">
+                    <option value="Disponibilidad para viajar Si">Si</option>
+                    <option value="Disponibilidad para viajar No">No</option>
+                </select>
     
-                <span>Idiomas</span>
+                <!-- <span>Idiomas</span> -->
     
-    
+
             </div>
     
             <div>
-                <span>Mis conocimientos </span>
-    
+
+                  <div class="container-thought">
+
+                         <span>Mis conocimientos </span>
+
+                         <select name="" id="" [(ngModel)]='selectedKnowledge' formControlName="knowledge">
+                            <option  *ngFor="let thought of optionThought">{{thought}}</option>
+                        </select>
+                        {{selectedKnowledge}}
+
+                  </div>
+               
                 <div class="container-skill">
                     <span>Habilidades</span>
 
@@ -107,10 +121,10 @@
             </select>
 
             <label for="name_prof">Titulo otorgado</label>
-            <input type="text" id="name_prof">
+            <input type="text" id="name_prof" formControlName="titleStudy">
 
             <span>Estado</span>
-            <select name="" id="" >
+            <select name="" id="" formControlName="study">
                 <option *ngFor="let st of optionState">{{st}}</option>
             </select>
 
@@ -121,40 +135,40 @@
             <span>Experiencia Laboral</span> 
 
             <span>Años de Experiencia laboral</span>
-            <select name="" id="" >
+            <select name="" id="" formControlName="yearJob">
                 <option *ngFor="let t of optionTime">{{t}}</option>
             </select>
 
              <label for="loadTitle">Nombre del cargo</label>
-                <input type="text" id="loadTitle">
+                <input type="text" id="loadTitle" formControlName="nameJob">
 
             <label for="company">Empresa</label>
-                <input type="text" id="company">
+                <input type="text" id="company" formControlName="nameCompany">
 
                 <span>Sector Economico de la empresa</span>
-                <select name="" id="" >
+                <select name="" id="" formControlName="sectorCompany">
                     <option  *ngFor="let sec of optionCompany">{{sec}}</option>
                 </select>
 
                 <span>Fecha Inicio</span>
-                    <select name="" id="">
+                    <select name="" id="" formControlName="companyMonth">
                         <option  *ngFor="let m of optionMonth">{{m}}</option>
                     </select>
 
-                    <input type="text" placeholder="AAAA">
+                    <input type="text" placeholder="AAAA"  formControlName="companyYear">
 
-                <input type="checkbox" id="job" > 
+                <input type="checkbox" id="job" value="Trabajo Actualmente en esta compañia" formControlName="companyActual" > 
                 <label for="job">Trabajo Actualmente en esta compañia</label>
 
                 <span>Fecha Finalizacion</span>
-                    <select name="" id="">
+                    <select name="" id="" formControlName="finalMonth">
                         <option  *ngFor="let f of optionMonth">{{f}}</option>
                     </select>
 
-                    <input type="text" placeholder="AAAA">
+                    <input type="text" placeholder="AAAA" formControlName="finalYear">
 
                 <span>Tus logros</span>
-                <textarea name="" id="" cols="30" rows="8"></textarea>
+                <textarea name="" id="" cols="30" rows="8" formControlName="attainment"></textarea>
 
             </div>
 
