@@ -2,7 +2,7 @@ import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ValidationErrors, ValidatorFn} from '@angular/forms';
 import { ApplicantService } from 'src/app/services/applicant.service';
-
+import { AvatarService } from 'src/app/services/avatar.service';
 
 @Component({
   selector: 'app-create-applicant',
@@ -44,7 +44,8 @@ export class CreateApplicantComponent implements OnInit {
   selectedKnowledge:string='';
 
   constructor(private fb: FormBuilder,
-              private _applicantService: ApplicantService) { 
+              private _applicantService: ApplicantService, 
+              private avatarService: AvatarService) { 
     this.createApplicant =this.fb.group({
       name:['', Validators.required],
       lastname:['', Validators.required],
@@ -129,9 +130,18 @@ export class CreateApplicantComponent implements OnInit {
     })
 
   }
-  
-  
-  
 
+  getAllAvatars(){
+    this.avatarService.getAllAvatars().subscribe(avatars => {
+      console.log(avatars)
+    })
+  }
+  getAvatar(){
+    this.avatarService.getAvatar('nata',true).subscribe(avatar =>{
+      console.log(avatar)
+    })
+
+  }
+ 
 }
 
