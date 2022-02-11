@@ -1,8 +1,8 @@
 .sectionAvatar{
     height: 66vh;
     width: 22vw;
-    margin:-26vh 0 0 14vw;
-    z-index: 5;
+    margin:-30vh 0 0 14vw;
+    z-index: 10;
     justify-content: center;
     display: flex;
     flex-direction: column;

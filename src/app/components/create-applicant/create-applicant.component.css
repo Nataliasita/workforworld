@@ -143,6 +143,7 @@ input.ng-invalid.ng-touched {
     font-weight: 700;
     justify-content: center;
 }
+
 .btn_next:hover{
     margin-left: 1vw;
     /* background-color: #0060a0; */

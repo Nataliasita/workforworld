@@ -57,7 +57,7 @@ export class CreateApplicantComponent implements OnInit {
     this.createApplicant =this.fb.group({
       name:['', Validators.required],
       lastname:['', Validators.required],
-      typeIdent:['', Validators.required],
+      typeIdent:[''],
       numberIdent:['', Validators.required],
       email:['', Validators.required],
       phoneContact:['', Validators.required],

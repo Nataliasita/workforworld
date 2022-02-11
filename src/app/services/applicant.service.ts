@@ -14,7 +14,7 @@ export class ApplicantService {
   }
 
   getApplicant() : Observable <any> {
-    return this.firestore.collection('allApplicant', ref => ref.orderBy('dateCreation','asc')).snapshotChanges()
+    return this.firestore.collection('allApplicant', ref => ref.orderBy('dateCreation','desc')).snapshotChanges()
   }
 
 }

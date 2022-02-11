@@ -6,13 +6,13 @@
     flex-direction: column;
     display: flex;
     padding-top: 8vh;
-    background-color: #adadad;
+    background-color: #ffffff;
 }
 .data_profile{
     width: 100vw;
     margin-top: 0;
     height: 160vh;
-    background-color: rgb(0, 255, 34);
+    /* background-color: rgb(0, 255, 34); */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -20,9 +20,71 @@
 }
 .header{
     width: 78vw;
-    height: 45vh;
+    height: 39vh;
     background: #0093E4;
     margin-top: 5vh;
+    display: flex;
+    align-items: flex-end;
+    padding-right: 2vw;
+    justify-content: center;
+    flex-direction: column;
     border-top-right-radius: 200px;
     border-bottom-right-radius: 200px;
+    color: #ffffff;
+}
+.nameAsp{
+    display: flex;
+    width: 42vw;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    margin-top: 5vh;
+}
+.nameAsp2{
+    display: flex;
+    width: 35vw;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5vh;
+    margin-right: 2vw;
+}
+.img-ubit{
+    height: 4vh;
+}
+.file{
+    width: 30vw;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2.2vw;
+}
+.about{
+    background-color: #d7dcff;
+    width: 45vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 15%;
+    margin-top: 25%;
+    justify-content: center;
+    align-items: center;
+    color: #495461;
+    border-radius: 20px;
+}
+#text_about{
+    width: 40vw;
+    text-align: justify;
+    background-color: #d7dcff;
+    border: none;
+    color: #495461;
+}
+.title_abo{
+    width: 45vw;
+    text-align: left;
+    padding-left:2vw;
+}
+.title_style{
+    color: #569AFE;
+    font-weight: bold;
 }

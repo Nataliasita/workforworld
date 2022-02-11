@@ -29,7 +29,8 @@
                 <div class="contain-formint">
                     <span>*Tipo de identificación</span>
 
-                        <select name="" id="" formControlName="typeIdent" required >
+                       
+                        <select name="" id="changetypea" formControlName="typeIdent" >
                             <option *ngFor="let n of optionsDoc">{{n}}</option>
                         </select>
                 </div>
@@ -72,7 +73,7 @@
                 <span id="titledsa" >Fecha de Nacimiento</span>
                 </div>
                 <div>
-                     <input type="number" min="1" step="1" class="tools" id="date_applicant" placeholder="DD" formControlName="numBirth" pattern="[1-31]*">
+                     <input type="number" min="1" step="1" class="tools" id="date_applicant" placeholder="D" formControlName="numBirth" pattern="[1-31]*">
 
                         <select name="" id="" class="tools" formControlName="monthBirth">
                               <option  *ngFor="let na of optionMonth">{{na}}</option>

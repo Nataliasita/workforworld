@@ -1,13 +1,34 @@
-<section class="containt_profile">
+<section class="containt_profile" *ngFor=" let item of profileApplicant">
     <app-header></app-header>
         <section class="data_profile">
-            <header class="header">
 
+            <header class="header">
+                <div class="nameAsp">
+                      <h4 style="margin-right: 0.8vw; font-weight: 600;">{{item.name}}</h4><h4 style="font-weight: 600;">{{item.lastname}}</h4>   
+                </div>
+                <div class="file">
+                     <span style="margin-right: 11%;">{{item.titleStudy}}</span>
+                </div>
+                <div class="nameAsp2">
+                        <div>
+                           <img class="img-ubit" style="margin-right: 0.8vw;" src="./../../../assets/images/edificio.png" alt=""> <span>{{item.companyActual}}</span>
+                        </div>
+                        <div>
+                            <img class="img-ubit" style="margin-right: 0.8vw;" src="./../../../assets/images/ubication.png" alt=""> <span>{{item.country}}, </span><span>{{item.city}}</span>
+                         </div>
+               </div>
             </header>
+
             <app-avatar></app-avatar>
 
-
-
+            <div class="about">
+                <div class="title_abo">
+                   <h4 class="title_style">Sobre mi</h4>
+                </div>
+               <textarea name="" id="text_about" cols="40" rows="5" placeholder=" Ejemplo: Soy un Fotografo profesional apasionado por el paisajismo.">
+                {{item.aboutMe}}
+              </textarea>
+            </div>
 
 
         </section>
