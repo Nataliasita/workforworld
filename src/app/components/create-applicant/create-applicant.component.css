@@ -129,6 +129,7 @@ input.ng-invalid.ng-touched {
     top: 55vh;
     padding: 1em ;
     transform: rotate(90deg);
+    opacity: 0.7;
 }
 .btn_next{
     width: 17vw;
@@ -145,11 +146,11 @@ input.ng-invalid.ng-touched {
 .btn_next:hover{
     margin-left: 1vw;
     /* background-color: #0060a0; */
-    background: linear-gradient(0.25turn, #0088e2,  #fff48f);
+    background: linear-gradient(0.25turn, #0063a5,  hsla(187, 100%, 63%, 0.527));
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .title_style{
-    color: #0573BC;
+    color: #569AFE;
     font-weight: bold;
 }
 #name_prof{

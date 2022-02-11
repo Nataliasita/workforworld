@@ -1,10 +1,20 @@
-<div class="prueba">
+<div class="sectionAvatar">
                 
     <!-- <img src="./../../../assets/images/icon_content.svg" alt=""> -->
     <!-- <img src="./../../../assets/images/female1.svg" alt="">    -->
-    <div >
-    <img src="{{imageSrc}}">
-    </div>
+  
+    <img class="img_avatar" src="{{imageSrc}}">
 
-    <button (click)="selectAvatar()">avatar</button>
+    <div class="message_avatar">
+        <span>Selecciona tu avatar</span>
+    </div>
+    <div class="btns_avatar">
+         <button (click)="selectAvatar()"><img class="img_btn" src="./../../../assets/images/female.png" alt=""></button>
+         <button (click)="selectAvatar2()"><img class="img_btn" src="./../../../assets/images/male.png" alt=""></button>
+    </div>
+    <img class="img_avatar2" src="{{imageSrc}}">
+
 </div>
+
+
+

@@ -12,4 +12,9 @@ export class ApplicantService {
   addApplicant( aplicantItem:any):Promise<any>{
     return this.firestore.collection('allApplicant').add(aplicantItem);
   }
+
+  getApplicant() : Observable <any> {
+    return this.firestore.collection('allApplicant', ref => ref.orderBy('dateCreation','asc')).snapshotChanges()
+  }
+
 }

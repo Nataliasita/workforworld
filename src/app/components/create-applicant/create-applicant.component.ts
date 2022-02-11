@@ -48,6 +48,8 @@ export class CreateApplicantComponent implements OnInit {
   contain_part3=false;
   contain_term=false;
   modal=false;
+  bar1=false;    
+  bar2=false;              
 
   constructor(private fb: FormBuilder,
               private _applicantService: ApplicantService, 
@@ -155,12 +157,14 @@ export class CreateApplicantComponent implements OnInit {
   change1(){
     this.contain_part1=false;
     this.contain_part2=true;
+    this.bar1=true;
   }
   change2(){
     this.contain_part1=false;
     this.contain_part2=false;
     this.contain_part3=true;
     this.contain_term=true;
+    this.bar2=true;
   }
 
 }

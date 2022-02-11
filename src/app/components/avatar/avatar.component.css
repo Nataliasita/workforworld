@@ -1,0 +1,58 @@
+.sectionAvatar{
+    height: 66vh;
+    width: 22vw;
+    margin:-26vh 0 0 14vw;
+    z-index: 5;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    color: #0093e4;
+    font-weight: 600;
+
+}
+.img_avatar{
+    height: 45vh;
+    background-image: url('./../../../assets/images/profile.svg');
+    margin-bottom: 2vh;
+    background-size: 98% 94%;
+}
+.img_avatar2{
+    height: 10vh;
+    background-image: url('./../../../assets/images/profile.svg');
+    margin-bottom: 2vh;
+    background-size: 98% 94%;
+    position: absolute;
+    top: 1vh;
+    right: 16%;
+}
+.btns_avatar{
+    width: 22vw;
+    height: 12vh;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    padding: 0 2vw ;
+  
+}
+button{
+    width: 4.5vw;
+    height: 10vh;
+    border-radius: 1000px ;
+    background-color: #0093e4;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+button:hover{
+    background-color: #25afff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    transform: translateY(-0.8vh);
+}
+.img_btn{
+    height: 3.5vh;
+}
+.message_avatar{
+    width: 22vw;
+    height: 4vh;
+    margin-bottom: 1vh;
+    text-align: center;
+}

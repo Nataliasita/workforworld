@@ -1,6 +1,6 @@
 import { Component} from '@angular/core';
-// import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
-// import { Observable } from 'rxjs';
+
+import {  ApplicantService } from './../../services/applicant.service'
 
 export interface Item { name: string; }
 
@@ -11,15 +11,31 @@ export interface Item { name: string; }
 })
 export class ApplicantProfileComponent  {
 
-  // private itemsCollection: AngularFirestoreCollection<Item>;
-  // items: Observable<Item[]>;
-  // constructor(private afs: AngularFirestore) {
-  //   this.itemsCollection = afs.collection<Item>('items');
-  //   this.items = this.itemsCollection.valueChanges();
-  // }
-  // addItem(item: Item) {
-  //   this.itemsCollection.add(item);
-  // }
+  profileApplicant:any[] = []
+
+constructor( private _applicantService: ApplicantService){
+}
+
+getApplicant(){
+  this._applicantService.getApplicant().subscribe(data =>{
+    console.log(data)
+    this.profileApplicant=[];
+    data.forEach((element:any) => {
+        // console.log(element.payload.doc.id) acceso id
+        // console.log(element.payload.doc.data()) acceso a datos appplicant
+        this.profileApplicant.push({
+            id: element.payload.doc.id,
+            ...element.payload.doc.data()
+        })
+    });
+    console.log(this.profileApplicant);
+  })
   
+}
+
+ngOnInit():void{
+  this.getApplicant()
+}
+
 
 }
