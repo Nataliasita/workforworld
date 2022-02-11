@@ -12,7 +12,9 @@ import { AngularFireModule } from '@angular/fire/compat';
 // import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule} from '@angular/common/http'
+import { HttpClientModule} from '@angular/common/http';
+import { AvatarComponent } from './components/avatar/avatar.component'
+
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import { HttpClientModule} from '@angular/common/http'
     AppComponent,
     HomeComponent,
     CreateApplicantComponent,
-    ApplicantProfileComponent
+    ApplicantProfileComponent,
+    AvatarComponent
   ],
   imports: [
     BrowserModule,

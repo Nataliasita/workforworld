@@ -1,4 +1,4 @@
-import { ThisReceiver } from '@angular/compiler';
+import { newArray } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ValidationErrors, ValidatorFn} from '@angular/forms';
 import { ApplicantService } from 'src/app/services/applicant.service';
@@ -37,11 +37,12 @@ export class CreateApplicantComponent implements OnInit {
                   'javaScript', 'Html', 'Css', 'Angular'
                 ]
 
-
+            
   createApplicant:FormGroup;
   submitted=false;
   selected:string='';
   selectedKnowledge:string='';
+  imgP='';
 
   constructor(private fb: FormBuilder,
               private _applicantService: ApplicantService, 
@@ -137,11 +138,12 @@ export class CreateApplicantComponent implements OnInit {
     })
   }
   getAvatar(){
-    this.avatarService.getAvatar('nata',true).subscribe(avatar =>{
-      console.log(avatar)
-    })
-
+    this.avatarService.getAvatar('jess',true).subscribe(avatar =>{
+      console.log(avatar);
+      this.imgP=avatar;
+    });
   }
- 
+
+
 }
 

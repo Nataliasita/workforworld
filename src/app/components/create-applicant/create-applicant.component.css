@@ -74,3 +74,8 @@ textarea{
 input.ng-invalid.ng-touched {
     border:  5px solid#FA787E;
 }
+.prueba{
+    background-color: #00b609;
+    width: 15vw;
+    height: 20vh;
+}
