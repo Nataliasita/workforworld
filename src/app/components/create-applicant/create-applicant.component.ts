@@ -27,14 +27,14 @@ export class CreateApplicantComponent implements OnInit {
 
   optionSkill=['Actitud Positiva',' Adaptabilidad ','Analisis','Apoyar','Aprendizaje','Argumentacion','Asertividad',
                 'Atencion al cliente','Bases de datos','Colaboracion','Comercial','Compromiso','Comunicacion','Concentracion',
-                'Creatividad','Desarrollo', 'Digital','Diseño','Empatia','Escucha Activa','Flexibilidad','Honestidad','Ilustracion','Imaginacion','Innovacion',
+                'Creatividad','Desarrollo', 'Digital','Diseño','Empatia','Escucha Activa','Flexibilidad','Habilidades interpersonales','Honestidad','Ilustracion','Imaginacion','Innovacion',
                 'Investigacion','Liderazgo','Logistica','Mercadeo','Negociacion','Planeacion','Proactividad','Responsabilidad','Toma de Decisiones','Trabajo en Equipo','Tecnologia',
-                'Trabajo bajo presion','Ventas'
+                'Trabajo bajo presion','Ventas','Manejo de problemas y conflictos'
               ]
 
   optionThought=['Administración de la información','Algoritmos y programación','Aspectos sociales y profesionales','Ciencias de la computación','Circuitos','Computación centrada en la red',
                   'Computación gráfica',' Electrónica',' Ingeniería de software','Interacción humana','Sistemas digitales',' Machine Learning','Sistemas operativos','Telecomunicaciones',
-                  'javaScript', 'Html', 'Css', 'Angular'
+                  'javaScript', 'Html', 'Css', 'Angular','Programas de diseño Adobe(Photoshop,Lightroom )'
                 ]
 
             
@@ -43,6 +43,11 @@ export class CreateApplicantComponent implements OnInit {
   selected:string='';
   selectedKnowledge:string='';
   imgP='';
+  contain_part1=true;
+  contain_part2=false;
+  contain_part3=false;
+  contain_term=false;
+  modal=false;
 
   constructor(private fb: FormBuilder,
               private _applicantService: ApplicantService, 
@@ -62,7 +67,7 @@ export class CreateApplicantComponent implements OnInit {
       aboutMe:[''],
       travel:[''],
       knowledge:[''],
-      levelStudy:['', Validators.required],
+      levelStudy:[''],
       skill:[''],
       titleStudy:[''],
       study:[''],
@@ -82,14 +87,17 @@ export class CreateApplicantComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  onResetForm(){
+    this.createApplicant.reset();
+  }
 
   addApplicant(){
-    
     this.submitted=true;
     if(this.createApplicant.invalid){
       return;
     }
+
+
     const dataApplicant:any ={
       name:this.createApplicant.value.name,
       lastname:this.createApplicant.value.lastname,
@@ -126,6 +134,7 @@ export class CreateApplicantComponent implements OnInit {
 
     this._applicantService. addApplicant(dataApplicant).then(()=>{
       console.log('aplicante agregado con exito')
+      this.modal=true
     }).catch( error =>{
       console.log(error)
     })
@@ -143,7 +152,16 @@ export class CreateApplicantComponent implements OnInit {
       this.imgP=avatar;
     });
   }
-
+  change1(){
+    this.contain_part1=false;
+    this.contain_part2=true;
+  }
+  change2(){
+    this.contain_part1=false;
+    this.contain_part2=false;
+    this.contain_part3=true;
+    this.contain_term=true;
+  }
 
 }
 

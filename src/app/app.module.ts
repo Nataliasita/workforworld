@@ -13,7 +13,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
-import { AvatarComponent } from './components/avatar/avatar.component'
+import { AvatarComponent } from './components/avatar/avatar.component';
+import { HeaderComponent } from './components/header/header.component'
 
 
 
@@ -23,7 +24,8 @@ import { AvatarComponent } from './components/avatar/avatar.component'
     HomeComponent,
     CreateApplicantComponent,
     ApplicantProfileComponent,
-    AvatarComponent
+    AvatarComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

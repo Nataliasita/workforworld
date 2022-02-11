@@ -7,39 +7,39 @@
     flex-direction: column;
     z-index: 0;
     color: #000000;
-    background: linear-gradient(#1a57ff, #9198e5);
-    /* background: linear-gradient(0.25turn , #494949, #4E42D4); */
-    /* background: radial-gradient(#e66465, #9198e5); */
-    /* background: radial-gradient(ellipse at top, #00459e, transparent),
-            radial-gradient(ellipse at bottom, #00459e, transparent); */
-    /* background: #fffffb; */
+    background-image: url('./../../../assets/images/fnd6.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
 }
 .init{
     width: 100vw;
-    height: 100vh;
+    height: 60vh;
     display: flex;
-    clip-path: polygon(0 65%, 0% 100%, 25% 100%, 13% 7%, 75% 25%, 100% 100%, 39% 69%, 25% 100%, 64% 55%, 100% 0);
-    background: linear-gradient(336deg, #ff788e, rgba(0,0,255,0) 70.71%),
+    /* clip-path: polygon(0 65%, 0% 100%, 25% 100%, 13% 7%, 75% 25%, 100% 100%, 39% 69%, 25% 100%, 64% 55%, 70% 0);
+    background: linear-gradient(336deg, #a0008b, rgba(0,0,255,0) 70.71%),
                 linear-gradient(217deg, rgb(0, 183, 255), rgba(255,0,0,0) 70.71%),
-                linear-gradient(336deg, rgba(0, 53, 133, 0.8), rgba(0,0,255,0) 70.71%);
+                linear-gradient(336deg, rgba(0, 53, 133, 0.8), rgba(0,0,255,0) 70.71%); */
     z-index: 1;
     justify-content: center;
     justify-items: center;
+    opacity: 0.5;
+    transform: rotate(10deg)
 }
 .welcome{
     z-index: 50;
     width: 1000vw;
     height: 100vh;
     position: absolute;
-    background-color: #ffffff2a;
-    justify-content: space-around;
+    background-color: #00012254;
+    justify-content: center;
     display: flex;
-    backdrop-filter: blur(5px);
+    /* backdrop-filter: blur(5px); */
     align-items: center;
     flex-direction: column;
     color: #ffffff;
     border-radius: 20px;
-   
+
 }
 button{
     width: 10vw;
@@ -47,11 +47,36 @@ button{
     border: none;
     width: 18vw;
     border-radius: 10px;
-    background:#2300bd;
+    background:#006cb4;
     color: #ffffff;
     font-size: 1.5em;
 }
 button:hover{
     cursor: pointer;
-    background: linear-gradient(0.25turn, #7a00aa,  #fe3a3a);
+    background: linear-gradient(0.25turn, #0063a5,  hsla(0, 100%, 63%, 0.527));
+    margin-right: -1vw;
+}
+.contain-home{
+    width: 67vw;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 40vh;
+    background: #8a8a8a42;
+    border-radius: 20px;
+    margin-bottom: 7vh;
+    backdrop-filter: blur(6px);
+    animation: welcome 4s;
+}
+@keyframes welcome{
+    from{
+        margin-left: -70vw;
+        background: #8a8a8a00;
+    }
+    to{
+        
+        background: #8a8a8a42;
+    }
 }

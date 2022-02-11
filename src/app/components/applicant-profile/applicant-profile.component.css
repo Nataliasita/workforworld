@@ -1,0 +1,10 @@
+.containt_profile{
+    width: 100vw;
+    height: 190vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    padding-top: 8vh;
+    background-color: #adadad;
+}
