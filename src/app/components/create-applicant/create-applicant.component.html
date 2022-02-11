@@ -1,118 +1,141 @@
 <section class="contenedor_create_applicant">
 
       <form action="" class="form_applicant" autocomplete="off" [formGroup]=" createApplicant" (ngSubmit)="  addApplicant()">
-        
-        <section class="contain-form">
-            
+ 
+    <section class="contain-form" *ngIf='contain_part1'>
+        <h4 class="title_style">Informacion Personal</h4>
+
+        <div class="contain_row">
                 <div class="contain-formint">
 
                     <label for="name">Nombres</label>
                         <input type="text"  id="name" formControlName="name" required >
-                    
-            
+                
                 </div>
 
+                <div class="contain-formint">    
 
-
-                      
                     <label for="lastname">Apellidos</label>
                     <input type="text" id="lastname" formControlName="lastname" required >
 
+                </div>  
 
-
+        </div>
         
-                <div>
+        <div class="contain_row">
+                <div class="contain-formint">
                     <span>Tipo de identificación</span>
 
-                        <select name="" id="" formControlName="typeIdent">
+                        <select name="" id="" formControlName="typeIdent" required >
                             <option *ngFor="let n of optionsDoc">{{n}}</option>
                         </select>
+                </div>
 
+                <div class="contain-formint">
                     <label for="id_applicant">Número de identificación</label>
                     <input type="number" id="id_applicant" formControlName="numberIdent" required >
-        
+                 </div>
+
         </div>
 
     
             
-            <div >
-                <label for="email_applicant">Correo Electronico</label>
-                <input type="email" id="email_applicant" formControlName="email" required >
-
-                <label for="number-applicant">Telefono de contacto</label>
-                <input type="number" id="number-applicant" formControlName="phoneContact" required >
-
-                <span>Fecha de Nacimiento</span>
-                <input type="number" id="date_applicant" formControlName="numBirth">
-
-                <select name="" id="" formControlName="monthBirth">
-                    <option  *ngFor="let na of optionMonth">{{na}}</option>
-                </select>
-
-                <input type="number" placeholder="AAAA" formControlName="yearBirth">
-
-                <label for="country_applicant">Pais de residencia</label>
-                <input type="text" id="country_applicant" formControlName="country" required>
-
-                <label for="country_applicant">Ciudad de residencia</label>
-                <input type="text" id="country_applicant" formControlName="city" required >
+            <div class="contain_row">
+                <div class="contain-formint">
+                    <label for="email_applicant">Correo Electronico</label>
+                    <input type="email" id="email_applicant" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" formControlName="email" required >
+                </div>
+                <div class="contain-formint">
+                    <label for="number-applicant">Telefono de contacto</label>
+                    <input type="number" id="number-applicant" formControlName="phoneContact" required >
+                </div>
             </div>
 
+            
+            <div class="contain_row">
+                <div class="contain-formint">
+                       <label for="country_applicant">Pais de residencia</label>
+                       <input type="text" id="country_applicant" formControlName="country" required>
+                </div>
+                <div class="contain-formint">
+                    <label for="country_applicant">Ciudad de residencia</label>
+                    <input type="text" id="country_applicant" formControlName="city" required >
+              </div>
+
+            
+            </div>
+            <div class="contain_row2">
+                <div>
+                <span id="titledsa" >Fecha de Nacimiento</span>
+                </div>
+                <div>
+                     <input type="number" min="1" step="1" class="tools" id="date_applicant" placeholder="DD" formControlName="numBirth" pattern="[1-31]*">
+
+                        <select name="" id="" class="tools" formControlName="monthBirth">
+                              <option  *ngFor="let na of optionMonth">{{na}}</option>
+                       </select>
+
+                     <input type="number" class="tools" placeholder="AAAA" formControlName="yearBirth">
+                </div>
+            </div>
+            <div>
+               <button type="button" class="btn_next" (click)="change1()">Siguente<img style="height: 3vh; padding-left:'1vw';" src="./../../../assets/images/arrow.png" alt=""></button>
+            </div>
     </section>
 
-        <section class="informationProfile">
+        <section class="informationProfile" *ngIf='contain_part2'>
 
-            <div>
-    
-                <!-- <h4>Perfil Profesional</h4> -->
-    
+                <h4 class="title_style">Perfil Profesional</h4>
+
+            <div class="contain_row" style="margin-top:4vh">    
                 <span>Descripción breve de tu perfil profesional</span>
-                <textarea name="" id="" cols="30" rows="10" placeholder="Ejemplo: Soy un Fotografo profesional apasionado por el paisajismo." formControlName="aboutMe">
+                <textarea name="" id="" cols="30" rows="5" placeholder=" Ejemplo: Soy un Fotografo profesional apasionado por el paisajismo." formControlName="aboutMe">
 
                 </textarea>
                 
-    
+            </div>    
+            <div class="travel_set"> 
                 <span>Disponibilidad para viajar</span>
-                <select name="" id="" formControlName="travel">
+                <select name="" id="" formControlName="travel" class="tools">
                     <option value="Disponibilidad para viajar Si">Si</option>
                     <option value="Disponibilidad para viajar No">No</option>
                 </select>
-    
+            </div>
                 <!-- <span>Idiomas</span> -->
     
 
-            </div>
     
             <div>
 
-                  <div class="container-thought">
+                  <div  class="container-skill">
 
-                         <span>Mis conocimientos </span>
-
-                         <select name="" id="" [(ngModel)]='selectedKnowledge' formControlName="knowledge">
-                            <option  *ngFor="let thought of optionThought">{{thought}}</option>
-                        </select>
+                         <span style="margin-bottom: 1vh;" class="title_style">Mis conocimientos </span>
+                         <input type="text" list="knowledge1" [(ngModel)]='selectedKnowledge' placeholder=" Selecciona tus conocimientos" formControlName="knowledge">
+                         <datalist name="" id="knowledge1"  >
+                            <option  *ngFor="let thought of optionThought" >{{thought}}</option>
+                        </datalist>
                         {{selectedKnowledge}}
 
                   </div>
                
                 <div class="container-skill">
-                    <span>Habilidades</span>
-
-                        <select name="" id="" [(ngModel)]='selected' formControlName="skill">
+                    <span style="margin-bottom: 1vh;" class="title_style">Habilidades</span>
+                        <input type="text" list="yourSkills" placeholder=" Selecciona tus habilidades" [(ngModel)]='selected' formControlName="skill">
+                        <datalist name="" id="yourSkills">
                             <option  *ngFor="let skill of optionSkill">{{skill}}</option>
-                        </select>
+                        </datalist>
                         {{selected}}
                 </div>
     
             </div>
-    
+            <button type="button" class="btn_next" (click)="change2()">Siguiente<img style="height: 3vh; padding-left:'1vw';" src="./../../../assets/images/arrow.png" alt=""></button>
+            
         </section>   
 
 
-        <section class="informationAcademy">
+        <section class="informationAcademy" *ngIf='contain_part3'>
 
-            <h4>Formacion academica</h4>
+            <h4 class="title_style">Formacion academica</h4>
 
             <span>Cual es tu ultimo nivel de Estudios Terminado</span>
 
@@ -151,21 +174,22 @@
                 </select>
 
                 <span>Fecha Inicio</span>
-                    <select name="" id="" formControlName="companyMonth">
+                    <select class="tools" name="" id="" formControlName="companyMonth">
                         <option  *ngFor="let m of optionMonth">{{m}}</option>
                     </select>
 
-                    <input type="text" placeholder="AAAA"  formControlName="companyYear">
+                    <input type="text" class="tools" placeholder="AAAA"  formControlName="companyYear">
 
                 <input type="checkbox" id="job" value="Trabajo Actualmente en esta compañia" formControlName="companyActual" > 
                 <label for="job">Trabajo Actualmente en esta compañia</label>
 
-                <span>Fecha Finalizacion</span>
-                    <select name="" id="" formControlName="finalMonth">
+                     <span>Fecha Finalizacion</span>
+
+                    <select class="tools" name="" id="" formControlName="finalMonth">
                         <option  *ngFor="let f of optionMonth">{{f}}</option>
                     </select>
 
-                    <input type="text" placeholder="AAAA" formControlName="finalYear">
+                    <input class="tools" type="text" placeholder="AAAA" formControlName="finalYear">
 
                 <span>Tus logros</span>
                 <textarea name="" id="" cols="30" rows="8" formControlName="attainment"></textarea>
@@ -177,24 +201,31 @@
              
 
         
+            <div *ngIf='contain_term'>     
+                    <input type="checkbox" id="term"> 
+                    <label for="term">He leído y autorizo los Términos y condiciones de este portal.</label>
+            </div>    
+            
+            <div *ngIf='contain_term'>     
+                <input type="checkbox" id="termTwo"> 
+                <label for="termTwo" >Política de privacidad y protección de datos</label>
+            </div>  
 
-
-
-        <div>     
-                <input type="checkbox" id="term"> 
-                <label for="term">He leído y autorizo los Términos y condiciones de este portal.</label>
-        </div>    
+                    <button class="btn_next" *ngIf='contain_term'>Crear cuenta</button>
+            </form>
+                <span  *ngIf="submitted && createApplicant.invalid" >Revisa por favor aun hay campos requeridos incompletos y/o pendientes</span>
+                    
+                <!-- <button (click)="getAllAvatars()">aquiiiii estoy</button>
+                <button (click)="getAvatar()">Avatar</button> -->
         
-        <div>     
-            <input type="checkbox" id="termTwo"> 
-            <label for="termTwo" >Política de privacidad y protección de datos</label>
-         </div>  
 
-                <button>Crear cuenta</button>
-        </form>
-            <span *ngIf="submitted && createApplicant.invalid" >Revisa por favor aun hay campos requeridos incompletos y/o pendientes</span>
-                
-            <!-- <button (click)="getAllAvatars()">aquiiiii estoy</button>
-            <button (click)="getAvatar()">Avatar</button> -->
-           
+        <div class="bar">
+            <div class="progress" style="height: 2px; margin-bottom: 1vh;">
+                <div class="progress-bar" role="progressbar" style="width: 34%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <div class="progress" style="height: 7px;">
+                <div class="progress-bar" role="progressbar" style="width: 34%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+        </div>    
+
 </section>
