@@ -1,8 +1,10 @@
-import { newArray } from '@angular/compiler/src/util';
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ValidationErrors, ValidatorFn} from '@angular/forms';
 import { ApplicantService } from 'src/app/services/applicant.service';
 import { AvatarService } from 'src/app/services/avatar.service';
+import { IDropdownSettings } from 'ng-multiselect-dropdown';
+import { validateEventsArray } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-create-applicant',
@@ -25,22 +27,22 @@ export class CreateApplicantComponent implements OnInit {
 
   optionMonth=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic',]
 
-  optionSkill=['Actitud Positiva',' Adaptabilidad ','Analisis','Apoyar','Aprendizaje','Argumentacion','Asertividad',
-                'Atencion al cliente','Bases de datos','Colaboracion','Comercial','Compromiso','Comunicacion','Concentracion',
-                'Creatividad','Desarrollo', 'Digital','Diseño','Empatia','Escucha Activa','Flexibilidad','Habilidades interpersonales','Honestidad','Ilustracion','Imaginacion','Innovacion',
-                'Investigacion','Liderazgo','Logistica','Mercadeo','Negociacion','Planeacion','Proactividad','Responsabilidad','Toma de Decisiones','Trabajo en Equipo','Tecnologia',
-                'Trabajo bajo presion','Ventas','Manejo de problemas y conflictos'
+  optionSkill=[{id: 1, name:'Actitud Positiva'},{id:2, name :' Adaptabilidad '},{id:3, name:'Analisis'},{id:4, name:'Apoyar'},{id:5, name:'Aprendizaje'},{id:6, name:'Argumentacion'},{id:7, name:'Asertividad'},
+                 {id:8, name:'Atencion al cliente'},{id:9, name:'Bases de datos'},{id:10, name:'Colaboracion'},{id:11, name:'Comercial'},{id:12, name:'Compromiso'},{id:13, name:'Comunicacion'},{id:14, name:'Concentracion'},
+                 {id:15, name:'Creatividad'},{id:16, name:'Desarrollo'}, {id:17, name:'Digital'},{id:18, name:'Diseño'},{id:19, name:'Empatia'},{id:20, name:'Escucha Activa'},{id:21, name:'Flexibilidad'},{id:22, name:'Habilidades interpersonales'},{id:23, name:'Honestidad'},{id:24, name:'Ilustracion'},{id:25, name:'Imaginacion'},{id:26, name:'Innovacion'},
+                 {id:27, name:'Investigacion'},{id:28, name:'Liderazgo'},{id:29, name:'Logistica'},{id:30, name:'Mercadeo'},{id:31, name:'Negociacion'},{id:32, name:'Planeacion'},{id:33, name:'Proactividad'},{id:34, name:'Tecnologia'}
               ]
 
-  optionThought=['Administración de la información','Algoritmos y programación','Aspectos sociales y profesionales','Ciencias de la computación','Circuitos','Computación centrada en la red',
-                  'Computación gráfica',' Electrónica',' Ingeniería de software','Interacción humana','Sistemas digitales',' Machine Learning','Sistemas operativos','Telecomunicaciones',
-                  'javaScript', 'Html', 'Css', 'Angular','Programas de diseño Adobe(Photoshop,Lightroom )'
+  optionThought=[{id: 1, name: 'Administración de la información'},{id:2, name :'Algoritmos y programación'},{id:3, name:'Aspectos sociales y profesionales'},{id:4, name:'Ciencias de la computación'},{id:5,name:'Circuitos'},{id:6, name:'Computación centrada en la red'},
+                  {id:7, name:'Computación gráfica'},{id:8, name:' Electrónica'},{id:9, name:' Ingeniería de software'},{id:10, name:'Interacción humana'},{id:11, name:'Sistemas digitales'},{id:12, name:' Machine Learning'},{id:13, name:'Sistemas operativos'},{id:14, name:'Telecomunicaciones'},
+                  {id:15, name:'javaScript'}, {id:16, name:'Html'},{id:17, name: 'Css'}, {id:18, name:'Angular'},{id:19, name:'Programas de diseño Adobe(Photoshop,Lightroom )'}
                 ]
 
+    
             
   createApplicant:FormGroup;
   submitted=false;
-  selected:string='';
+  selected:string='';    
   selectedKnowledge:string='';
   imgP='';
   contain_part1=true;
@@ -68,9 +70,9 @@ export class CreateApplicantComponent implements OnInit {
       city:['', Validators.required],
       aboutMe:[''],
       travel:[''],
-      knowledge:[''],
+      knowledge:['', ],
       levelStudy:[''],
-      skill:[''],
+      skill:['', ],
       titleStudy:[''],
       study:[''],
       yearJob:[''],
@@ -166,6 +168,24 @@ export class CreateApplicantComponent implements OnInit {
     this.contain_term=true;
     this.bar2=true;
   }
+
+  prueba(){
+    
+  }
+  return1(){
+    this.contain_part1=true;
+    this.contain_part2=false;
+    this.contain_part3=false;
+    this.bar1=false;
+  }
+  return2(){
+    this.contain_part3=false;
+    this.contain_part2=true;
+    this.contain_term=false;
+    this.bar2=false;
+  }
+
+
 
 }
 

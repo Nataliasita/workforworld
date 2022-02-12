@@ -15,7 +15,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { AvatarComponent } from './components/avatar/avatar.component';
 import { HeaderComponent } from './components/header/header.component'
-
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { NgSelectModule } from "@ng-select/ng-select";
 
 
 @NgModule({
@@ -33,7 +34,9 @@ import { HeaderComponent } from './components/header/header.component'
     AngularFireModule.initializeApp(environment.firebase),
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgMultiSelectDropDownModule.forRoot(),
+    NgSelectModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
