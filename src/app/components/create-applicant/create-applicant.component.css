@@ -151,16 +151,13 @@ input.ng-invalid.ng-touched {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .title_style{
-    color: #569AFE;
+    color: #227aff;
     font-weight: bold;
 }
 #name_prof{
     width: 25VW;
-    margin-left: -2vw;
 }
-#sta_personal{
-    margin-right: -2vw;
-}
+
 .contain-level{
     width: 51vw;
     display: flex;

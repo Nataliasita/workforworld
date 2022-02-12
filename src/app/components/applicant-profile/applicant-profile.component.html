@@ -1,17 +1,20 @@
-<section class="containt_profile" *ngFor=" let item of profileApplicant">
+<section class="containt_profile" >
     <app-header></app-header>
-        <section class="data_profile">
+        <section class="data_profile" *ngFor=" let item of profileApplicant; index as i ">
 
             <header class="header">
-                <div class="nameAsp">
-                      <h4 style="margin-right: 0.8vw; font-weight: 600;">{{item.name}}</h4><h4 style="font-weight: 600;">{{item.lastname}}</h4>   
+
+            <div class="user">
+                <div>
+                      <h4 style=" font-weight: 600;">{{item.name}} {{item.lastname}}</h4>  
                 </div>
                 <div class="file">
-                     <span style="margin-right: 11%;">{{item.titleStudy}}</span>
+                     <span >{{item.titleStudy}}</span>
                 </div>
+            </div>
                 <div class="nameAsp2">
                         <div>
-                           <img class="img-ubit" style="margin-right: 0.8vw;" src="./../../../assets/images/edificio.png" alt=""> <span>{{item.companyActual}}</span>
+                           <img class="img-ubit" style="margin-right: 0.8vw;" src="./../../../assets/images/edificio.png" alt=""> <span>{{item.nameCompany}}</span>
                         </div>
                         <div>
                             <img class="img-ubit" style="margin-right: 0.8vw;" src="./../../../assets/images/ubication.png" alt=""> <span>{{item.country}}, </span><span>{{item.city}}</span>
@@ -23,13 +26,146 @@
 
             <div class="about">
                 <div class="title_abo">
-                   <h4 class="title_style">Sobre mi</h4>
+                   <h5 class="title_style">Sobre mi</h5>
                 </div>
-               <textarea name="" id="text_about" cols="40" rows="5" placeholder=" Ejemplo: Soy un Fotografo profesional apasionado por el paisajismo.">
+               <p name="" id="text_about" cols="40" rows="5" placeholder=" Ejemplo: Soy un Fotografo profesional apasionado por el paisajismo.">
                 {{item.aboutMe}}
-              </textarea>
+              </p>
+
+
             </div>
 
+                <div class="datosP">
+                    <h5 class="title_style">Informacion personal</h5>
+                    <br>
+                    <ul>
+                        <li><span style="color: #474747; font-weight: 600;">Tipo identificación </span>{{item.typeIdent}}</li>
+                        <li><span style="color: #474747; font-weight: 600;">Número identificación </span>{{item.numberIdent}}</li>
+                        <li><span style="color: #474747; font-weight: 600;">Correo Electronico </span>{{item.email}}</li>
+                        <li><span style="color: #474747; font-weight: 600;">Telefono contacto </span>{{item.phoneContact}}</li>
+                        <li><span style="color: #474747; font-weight: 600;">Fecha  Nacimiento </span>{{item.numBirth}}  {{item.monthBirth}}  {{item.yearBirth}}</li>
+                    </ul>
+
+                </div>
+
+                <div  class="container-skill">
+
+                    <h5 style="margin-bottom: 1vh;" class="title_style">Mis conocimientos </h5>
+            
+                                <!-- <ng-select
+                                    [items]="optionThought"
+                                    bindLabel="name"
+                                    placeholder="Selecciona tus conocimientos"
+                                    appendTo="body"
+                                    [multiple]="true"
+                                    [(ngModel)]="selectedKnowledge"
+                                 >
+                                    </ng-select> -->
+
+                                    {{item.knowledge[0].name}} {{item.knowledge[1].name}}{{item.knowledge[2].name}} {{item.knowledge[3].name}} {{item.knowledge[4].name}}{{item.knowledge[5].name}}
+                                    {{item.knowledge[6].name}}
+
+                    </div>
+
+                 <div class="allSksa">
+
+                              
+
+                        <div class="container-skill2">
+            
+                                    <h5 class="title_style">Habilidades</h5>
+
+                                        <!-- <ng-select
+                                        [items]="optionSkill"
+                                        bindLabel="name"
+                                        placeholder="Selecciona tus habilidades"
+                                        appendTo="body"
+                                        [multiple]="true"
+                                        [(ngModel)]="selected"
+                                     
+                                    >   
+                                   
+                                        </ng-select> -->
+
+                                        {{item.skill[0].name}} {{item.skill[2].name}} {{item.skill[3].name}} {{item.skill[4].name}} {{item.skill[5].name}}{{item.skill[6].name}}
+                                   
+                            </div>
+                </div>
+
+                <div  class="container_study">
+                 <div class="titleS">
+                    <img  style="margin-right: 1vw;"class="img-ubit" src="./../../../assets/images/gorro.png" alt="">
+
+                    <h5 style="margin-bottom: 1vh;" class="title_style"> Formacion academica</h5>
+                </div>
+
+                <div class="ite1">
+                    <div>
+                        <span style="color: #474747; font-weight: 600;">Ultimo nivel de Estudios Terminado</span> <p>{{item.levelStudy}}</p>
+                    </div>
+                    <div>
+                        <span style="color: #474747; font-weight: 600;">Titulo otorgado</span> <p>{{item.titleStudy}}</p>
+                    </div>
+                </div>   
+
+                    <div class="ite1">
+                        <div>
+                          <span style="color: #474747; font-weight: 600;">Estado</span> <p>{{item.study}}</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="experience" >
+                    <h5 style="margin-bottom: 3vh;" class="title_style"> Experiencia Laboral</h5>
+                    <div class="row_ex">
+                          <span style="color: #474747; font-weight: 600;">Años de Experiencia laboral </span> <p> {{item.yearJob}}</p>
+                     </div>
+                    <div class="experience2">
+                        <div class="row_2d">
+                            <div  class="col_ex">
+                            <span style="color: #474747; font-weight: 600;">Nombre del cargo</span> <p>{{item.nameJob}}</p>
+                            </div>
+                            <div class="col_ex">
+                            <span style="color: #474747; font-weight: 600;">Empresa</span> <p>{{item.nameCompany}}</p>
+                            </div>
+                            <div>
+                                <span style="color: #474747; font-weight: 600;">Sector Economico de la empresa</span> <p>{{item.sectorCompany}}</p>
+                            </div>
+                           
+
+                        </div>
+                        
+                    <div class="row_2d">
+                        <div class="col_ex">
+                            <span style="color: #474747; font-weight: 600;">Fecha inicio</span> 
+                            <div class="row_defaul">
+                            <p>{{item.companyMonth}}</p><p>{{item.companyYear}}</p>
+                            </div>
+                        </div>
+                        <div class="col_ex">
+                            <span style="color: #474747; font-weight: 600;">Fecha Finalizacion</span> 
+                            <div class="row_defaul">
+                            <p>{{item.finalMonth}}</p><p>{{item.finalYear}}</p>
+                          </div>
+                        </div>
+                    </div>
+                  
+
+               
+                </div>
+
+                <div class="row_2d">
+                    <span style="margin-right: 3vw ; margin-top: 5vh ; color: #474747; font-weight: 600;">Logros Obtenidos</span> 
+                    <p style="width: 45vw; margin-top: 5vh; text-align: justify;" name="" id="" cols="30" rows="5" >{{item.attainment}}</p>
+                </div>
+            </div>
+                <div class="travis">
+             
+                    <img class="img-ubit" style="margin-right: 0.8vw;" src="./../../../assets/images/avion.png" alt="">     <span>{{item.travel}}</span>
+ 
+                </div>
 
         </section>
+
 </section>

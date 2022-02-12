@@ -13,19 +13,19 @@ import { validateEventsArray } from '@angular/fire/compat/firestore';
 })
 export class CreateApplicantComponent implements OnInit {
 
-  optionsDoc= ['Cedula de Ciudadania', 'Cedula Extranjeria','Pasaporte'];
+  optionsDoc= ['Selecciona una opcion ','Cedula Ciudadania', 'Cedula Extranjeria','Pasaporte'];
 
-  optionStudyLevel= ['Basica secundaria','Tecnico o Tecnologo','Pregrado Universitario','Posgrado - Especializacion','Posgrado - Maestria','Posgrado - Doctorado'];
+  optionStudyLevel= ['Selecciona una opcion ','Basica secundaria','Tecnico o Tecnologo','Pregrado Universitario','Posgrado - Especializacion','Posgrado - Maestria','Posgrado - Doctorado'];
 
-  optionState =['Terminado','En curso','Abandonado','Aplazado'];
+  optionState =['Selecciona una opcion ','Terminado','En curso','Abandonado','Aplazado'];
 
-  optionTime =['Menos de 1 año','Entre 1 año a 2 años','Entre 3 años a 4 años','Mas de 5 años'];
+  optionTime =['Selecciona una opcion ','Menos de 1 año','Entre 1 año a 2 años','Entre 3 años a 4 años','Mas de 5 años'];
 
-  optionCompany=['Administracion','Agricultura y desarrollo rural', 'Comercial', 'Energetico','Financiero',
+  optionCompany=['Selecciona una opcion ','Administracion','Agricultura y desarrollo rural', 'Comercial', 'Energetico','Financiero',
                   'Industrial','Tecnologia y software','Turistico', 'Otro'
                 ]
 
-  optionMonth=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic',]
+  optionMonth=['','Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic',]
 
   optionSkill=[{id: 1, name:'Actitud Positiva'},{id:2, name :' Adaptabilidad '},{id:3, name:'Analisis'},{id:4, name:'Apoyar'},{id:5, name:'Aprendizaje'},{id:6, name:'Argumentacion'},{id:7, name:'Asertividad'},
                  {id:8, name:'Atencion al cliente'},{id:9, name:'Bases de datos'},{id:10, name:'Colaboracion'},{id:11, name:'Comercial'},{id:12, name:'Compromiso'},{id:13, name:'Comunicacion'},{id:14, name:'Concentracion'},
@@ -70,7 +70,7 @@ export class CreateApplicantComponent implements OnInit {
       city:['', Validators.required],
       aboutMe:[''],
       travel:[''],
-      knowledge:['', ],
+      knowledge:[''],
       levelStudy:[''],
       skill:['', ],
       titleStudy:[''],

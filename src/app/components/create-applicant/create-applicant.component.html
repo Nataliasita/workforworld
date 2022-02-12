@@ -8,6 +8,8 @@
     <section class="contain-form" *ngIf='contain_part1'>
         <h4 class="title_style">Informacion Personal</h4>
 
+                <span>Todos los campos marcados * son obligatorios</span>
+
         <div class="contain_row">
                 <div class="contain-formint">
 
@@ -73,7 +75,7 @@
                 <span id="titledsa" >Fecha de Nacimiento</span>
                 </div>
                 <div>
-                     <input type="number" min="1" step="1" class="tools" id="date_applicant" placeholder="D" formControlName="numBirth" pattern="[1-31]*">
+                     <input type="number" min="1" step="1" class="tools" id="date_applicant" placeholder="DD" formControlName="numBirth" >
 
                         <select name="" id="" class="tools" formControlName="monthBirth">
                               <option  *ngFor="let na of optionMonth">{{na}}</option>
@@ -104,8 +106,8 @@
             <div class="travel_set"> 
                 <span>Disponibilidad para viajar</span>
                 <select name="" id="" formControlName="travel" class="tools">
-                    <option value="Disponibilidad para viajar Si">Si</option>
-                    <option value="Disponibilidad para viajar No">No</option>
+                    <option value="Tengo disponibilidad para viajar">Si</option>
+                    <option value="no cuento con disponibilidad para viajar">No</option>
                 </select>
             </div>
                 <!-- <span>Idiomas</span> -->

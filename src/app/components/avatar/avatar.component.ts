@@ -109,13 +109,13 @@ cambioAvatar(){
 selectAvatar(){
   this.currentImage = this.cambioAvatar().src;
   this.imageSrc=this.currentImage;
-  console.log('sdfsdf')
+  // console.log('sdfsdf')
 }
 
 selectAvatar2(){
   this.currentImage = this.cambioAvatar2().src;
   this.imageSrc=this.currentImage;
-  console.log('sdfsdf')
+  // console.log('sdfsdf')
 }
 
 cambioAvatar2(){

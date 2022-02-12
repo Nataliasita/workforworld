@@ -21,7 +21,6 @@ input{
   height: 6.5vh;
   border:  1px solid #3ab0ff;
   padding: 0.3em;
-  text-transform: capitalize;
 }
 select{
   outline: none;
@@ -36,3 +35,4 @@ textarea{
   border:  1px solid #20a6ff;
   overflow: hidden;
 }
+
