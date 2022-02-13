@@ -11,6 +11,7 @@ Through the completion of a form that is connected to a firebase database, the a
 
 
 <img src="view.gif" style="width:650px;"></img>
+![alt text](https://github.com//Nataliasita/workforworld/raw/master/src/assets/images/view.gif "Logo Title Text 1")
 
 
 `To take into account`
