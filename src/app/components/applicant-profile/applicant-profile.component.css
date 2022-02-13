@@ -8,13 +8,11 @@
     display: flex;
     padding-top: 18vh;
     background-color: #ffffff;
-    /* background-color: crimson; */
 }
 .data_profile{
     width: 100vw;
     margin-top: 0;
-    height: 290vh;
-    /* background-color: rgb(0, 255, 34); */
+    height: 300vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -24,7 +22,7 @@
 .header{
     width: 78vw;
     height: 34vh;
-    background: #0093E4;
+    background: #007fc4ee;
     margin-top: 5vh;
     display: flex;
     align-items: flex-end;
@@ -111,7 +109,7 @@
     background-color: #ffffff;
     flex-direction: column;
     display: flex;
-    margin:12vh 0 0 0;
+    margin:17vh 0 0 0;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
@@ -126,7 +124,7 @@
 .datosP{
     width: 33vw;
     height: 35vh;
-    margin: 4vh 0 0 12vw;
+    margin: -2vh 0 0 15vw;
     padding-left:0;
     padding-top: 4vh;
 }
