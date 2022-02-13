@@ -72,7 +72,7 @@ export class CreateApplicantComponent implements OnInit {
       travel:[''],
       knowledge:[''],
       levelStudy:[''],
-      skill:['', ],
+      skill:['',],
       titleStudy:[''],
       study:[''],
       yearJob:[''],

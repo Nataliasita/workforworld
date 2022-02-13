@@ -38,13 +38,13 @@
                 <div class="datosP">
                     <h5 class="title_style">Informacion personal</h5>
                     <br>
-                    <ul>
-                        <li><span style="color: #474747; font-weight: 600;">Tipo identificación </span>{{item.typeIdent}}</li>
+
+                        <li ><span style="color: #474747; font-weight: 600;">Tipo identificación </span>{{item.typeIdent}}</li>
                         <li><span style="color: #474747; font-weight: 600;">Número identificación </span>{{item.numberIdent}}</li>
                         <li><span style="color: #474747; font-weight: 600;">Correo Electronico </span>{{item.email}}</li>
                         <li><span style="color: #474747; font-weight: 600;">Telefono contacto </span>{{item.phoneContact}}</li>
                         <li><span style="color: #474747; font-weight: 600;">Fecha  Nacimiento </span>{{item.numBirth}}  {{item.monthBirth}}  {{item.yearBirth}}</li>
-                    </ul>
+                
 
                 </div>
 
@@ -61,9 +61,13 @@
                                     [(ngModel)]="selectedKnowledge"
                                  >
                                     </ng-select> -->
-
-                                    {{item.knowledge[0].name}} {{item.knowledge[1].name}}{{item.knowledge[2].name}} {{item.knowledge[3].name}} {{item.knowledge[4].name}}{{item.knowledge[5].name}}
-                                    {{item.knowledge[6].name}}
+                                <div class="container_list">
+                                   <span class="list_one">{{item.knowledge[0].name}}</span> 
+                                   <span class="list_two">{{item.knowledge[1].name}}</span>
+                                   <span  class="list_three">{{item.knowledge[2].name}} </span>
+                                  <span class="list_four"> {{item.knowledge[3].name}} </span>
+                                  <span class="list_five">{{item.knowledge[4].name}}</span>
+                                </div>
 
                     </div>
 
@@ -83,12 +87,16 @@
                                         [multiple]="true"
                                         [(ngModel)]="selected"
                                      
-                                    >   
-                                   
+                                    > 
+    
                                         </ng-select> -->
-
-                                        {{item.skill[0].name}} {{item.skill[2].name}} {{item.skill[3].name}} {{item.skill[4].name}} {{item.skill[5].name}}{{item.skill[6].name}}
-                                   
+                                <div class="container_list2">
+                                  <span class="list_one">{{item.skill[0].name}} </span>
+                                   <span class="list_two">{{item.skill[1].name}} </span> 
+                                   <span class="list_three">{{item.skill[2].name}}</span>  
+                                   <span class="list_four">{{item.skill[3].name}} </span>
+                                   <span class="list_five"> {{item.skill[4].name}}</span>  
+                                </div>
                             </div>
                 </div>
 
@@ -162,10 +170,13 @@
             </div>
                 <div class="travis">
              
-                    <img class="img-ubit" style="margin-right: 0.8vw;" src="./../../../assets/images/avion.png" alt="">     <span>{{item.travel}}</span>
+                    <img class="img-ubit" style="margin-right: 0.8vw; margin-top: 2vh;" src="./../../../assets/images/avion.png" alt="">     <span>{{item.travel}}</span>
  
                 </div>
 
+                <footer class="footer">
+
+                </footer>
         </section>
 
 </section>

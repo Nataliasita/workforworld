@@ -8,7 +8,7 @@
     <section class="contain-form" *ngIf='contain_part1'>
         <h4 class="title_style">Informacion Personal</h4>
 
-                <span>Todos los campos marcados * son obligatorios</span>
+                <span>Todos los campos son obligatorios</span>
 
         <div class="contain_row">
                 <div class="contain-formint">
@@ -117,8 +117,9 @@
             <div>
 
                   <div  class="container-skill">
-
-                         <span style="margin-bottom: 1vh;" class="title_style">Mis conocimientos </span>
+                        <div>
+                         <span style="margin-bottom: 1vh;" class="title_style">*Mis conocimientos </span><span style="color: #555555; font-size: 0.8em; font-style: italic;">Min 5</span>
+                        </div> 
                          <!-- <input type="text" list="knowledge1" [(ngModel)]='selectedKnowledge' placeholder=" Selecciona tus conocimientos" formControlName="knowledge">
                          <datalist name="" id="knowledge1"  >
                             <option  *ngFor="let thought of optionThought" >{{thought}}</option>
@@ -144,8 +145,9 @@
                         </datalist>
                     
                        {{selected}} -->
-                <span style="margin-bottom: 1vh;" class="title_style">Habilidades</span>
-
+                 <div>
+                <span style="margin-bottom: 1vh;" class="title_style">*Habilidades </span><span style="color: #555555; font-size: 0.8em; font-style: italic;">Min 5</span>
+                   </div>
                     <ng-select
                        [items]="optionSkill"
                        bindLabel="name"
