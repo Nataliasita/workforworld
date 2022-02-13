@@ -2,7 +2,7 @@
 
 This project was developed in order to provide a digital tool for applying for job candidates around the world.
 
-This project was generated with Angular CLI version 13.2.2. in HTML, CSS, Typescript languages ​​supported by the Boostrap library, ng-select and database hosted on firebase.
+This project was generated with Angular CLI version 13.2.2. in HTML, CSS, Typescript languages ​​supported by the Boostrap library, ng-select library and database hosted on firebase.
 
 
 ## Structure Proyect
